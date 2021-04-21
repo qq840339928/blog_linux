@@ -27,7 +27,7 @@ module.exports = {
     production : {
       user : 'root',
       host : '8.140.133.166',
-      ref  : 'origin/main',
+      ref  : 'origin/master',
       repo : 'https://github.com/qq840339928/blog_linux.git',
       path : '/gy/myProject',
       ssh_options: "StrictHostKeyChecking=no",
