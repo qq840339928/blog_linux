@@ -1,0 +1,25 @@
+var express = require('express');
+var router = express.Router();
+var query = require('../db/index')
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+/**
+ * 注册接口
+ */
+router.post('/register', function(request, response, next) {
+  query('select * from user', request.body.username).then(res => {
+    // 数据库没有该用户名，注册成功
+    if (res.length > 0) {
+      responseText = {code: 201, msg: '该用户名已存在'}
+    }
+    response.send(responseText)
+    // query('insert into user (username,password,nickname) values(?,?,?)', req.body).then(res => {
+    //   console.log(res)
+    // })
+  })
+});
+
+module.exports = router;
