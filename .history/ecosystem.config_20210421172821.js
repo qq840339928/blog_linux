@@ -31,7 +31,7 @@ module.exports = {
       repo : 'https://github.com/qq840339928/blog_linux.git',
       path : '/gy/myProject',
       ssh_options: "StrictHostKeyChecking=no",
-      'post-deploy' : 'cnpm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
       "env": {
         "NODE_ENV": "production"
       }
